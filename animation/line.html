@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+  <style>
+    .box{width:100px;position:absolute;top:0;left:0;padding:0;height:100px;background:green;}
+  </style>
+</head>
+<body>
+  <div class="box"></div>
+  <script>
+var box = document.getElementsByClassName("box")[0];
+var timer = null;
+var width= document.documentElement.clientWidth||document.body.clientWidth;
+var boxWidth = box.offsetWidth;
+var target = width - boxWidth;
+var step = 5;
+// 注意cur的声明位置
+var cur ;
+function move(){
+  window.clearTimeout(timer);
+  // 注意这里要parseFloat一下
+    cur = parseFloat(window.getComputedStyle(box,null)["left"]);
+  if(cur+step>=target){
+    cur = target;
+    cur+="px"
+    window.clearTimeout(timer);
+  }
+  cur+=step;
+  // 注意这里要加单位
+  cur+="px"
+  box.style.left=cur;
+  // 注意这里的timer前不能加var变成私有变量;
+  timer = window.setTimeout(move,10)
+}
+move();
+  </script>
+
+</body>
+</html>

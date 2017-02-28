@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style type="text/css">
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        #box {
+            position: absolute;
+            top: 0;
+            left: 500px;
+            padding: 0;
+            width: 100px;
+            height: 100px;
+            background: lightblue;
+        }
+        .btn {
+            position: absolute;
+            top: 200px;
+            left: 100px;
+            height: 50px;
+        }
+        .btn input {
+            display: inline-block;
+            margin-left: 50px;
+            outline: none;
+            width: 100px;
+            height: 50px;
+            border: 1px solid green;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+<div id="box"></div>
+<div class="btn">
+    <input type="button" value="向左" id="btnLeft"/>
+    <input type="button" value="向右" id="btnRight"/>
+</div>
+
+<script type="text/javascript" >
+  var left = document.getElementById("btnLeft");
+  var right = document.getElementById("btnRight")
+var box = document.getElementById("box");
+width= document.documentElement[ "clientWidth" ]||document.body["clientWidth"];
+var min = 0,max = width - box.offsetWidth;
+var timer;
+//  cur写在这里是错的,因为cur这时是带单位的了;
+  // var cur = parseFloat(window.getComputedStyle(box,null)["left"]);
+function move(target){
+  _move();
+  function _move(){
+    // window.clearTimeout(box.timer);
+    window.clearTimeout(timer);
+    // cur写在这里是对的,因为cur重新获取,单位被去掉了;
+    var cur = parseFloat(window.getComputedStyle(box,null)["left"]);
+    if(cur>target){
+      if(cur-5<target){
+        cur=0;
+        cur+="px"
+      box.style.left=cur;
+      window.clearTimeout(timer);
+        return;
+      }
+      cur-=5;
+      cur+="px"
+      box.style.left=cur;
+      // box.timer = window.setTimeout(_move, 10);
+    }else if(cur<target){
+        if(cur+5>target){
+          cur=0;
+          cur+="px"
+        box.style.left=cur;
+        window.clearTimeout(timer);
+          return;
+        }
+        cur+=5;
+        cur+="px"
+        box.style.left=cur;
+        // box.timer = window.setTimeout(_move, 10);
+    }else{
+        cur+="px"
+        box.style.left=cur;
+        window.clearTimeout(timer);
+          return;
+    }
+      timer = window.setTimeout(_move,10)
+  }
+}
+left.onclick = function(){
+move(min)
+}
+right.onclick = function(){
+move(max)
+}
+</script>
+</body>
+</html>
