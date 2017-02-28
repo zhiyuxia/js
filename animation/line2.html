@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+  <style>
+    .box{width:100px;position:absolute;top:0;left:0;padding:0;height:100px;background:green;}
+  </style>
+</head>
+<body>
+  <div class="box"></div>
+  <script>
+function getCss(curEle, attr) {
+        var val = null, reg = null;
+            val = window.getComputedStyle(curEle, null)[attr];
+        reg = /^(-?\d+(\.\d+)?)(px|pt|em|rem)?$/;
+        return reg.test(val) ? parseFloat(val) : val;
+}
+    var box = document.getElementsByClassName("box")[0];
+    console.log(box)
+     width= document.documentElement.clientWidth||document.body.clientWidth;
+console.log(width)
+    var duration =500,target = width - box.offsetWidth;
+  var step = (target/duration)*10;
+console.log(step)
+    var timer = window.setInterval(function(){
+      // 注意getCss方法把left的单位给去除了
+      var cur = getCss(box,"left");
+      if(cur>=width){
+        window.clearInterval(timer);
+        return;
+      }
+      cur+=step;
+
+      // 注意加上单位
+      cur+="px";
+      box.style.left=cur;
+      // console.log(cur)
+    },10)
+  </script>
+</body>
+</html>
