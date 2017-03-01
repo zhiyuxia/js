@@ -29,10 +29,9 @@ str2 = str.replace(reg,function(){
 // console.log(str);
 // console.log(str2);
 var str = "http://kbs.sports.qq.com/kbsweb/game.htm?mid=100&cid=23432&app=1.2";
-var reg = /[^?&]([a-z]+)=(\d+(\.\d+)?)/g;
+var reg = /([^?=&]+)=([^?=&]+)/g;
 var obj ={};
 var val = reg.exec(str);
-console.log(val);
 while(val){
   obj[val[1]]=val[2];
   val = reg.exec(str);

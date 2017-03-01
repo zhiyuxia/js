@@ -49,6 +49,7 @@
         <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/index.js" />
         <option value="$PROJECT_DIR$/index2.html" />
+        <option value="$PROJECT_DIR$/index2.js" />
       </list>
     </option>
   </component>
@@ -115,12 +116,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1488180978114</updated>
-      <workItem from="1488180979434" duration="889000" />
+      <workItem from="1488180979434" duration="1229000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="889000" />
+    <option name="totallyTimeSpent" value="1229000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="17" y="46" width="1352" height="803" extended-state="0" />

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+  <style>
+    *{margin:0;padding:0;}
+    ul{list-style:none;}
+    .box{width:500px;margin:10px auto;}
+    .box ul{position:relative;top:1px;}
+
+    .box ul li{float:left;margin-left:15px;width:100px;height:30px;border:1px
+    solid green;line-height:30px;text-align:center;cursor:pointer;border-bottom:
+    lightblue;}
+
+    .box ul li.select{background:lightblue;}
+
+    .box div{height:150px;line-height:150px;background:lightblue;border:1px
+    solid green;text-align:center;display:none;}
+
+    .clearfix:after{content:"";display:block;clear:both;}
+    .box div.select{display:block;}
+
+  </style>
+</head>
+<body>
+  <div class="box" id="tab">
+    <ul class="clearfix" id="tabOption">
+      <li class="select">页卡一</li>
+      <li>页卡二</li>
+      <li>页卡三</li>
+    </ul>
+    <div class="select">
+      <div>1</div>
+      <div>2</div>
+      <div>3</div>
+      <div>4</div>
+    </div>
+    <div>内容二</div>
+    <div>内容三</div>
+  </div>  
+  <script src="method2.js"></script>
+</body>
+</html>
