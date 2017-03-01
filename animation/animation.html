@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style type="text/css">
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        #box {
+            position: absolute;
+            top: 0;
+            left: 5%;
+            width: 100px;
+            height: 100px;
+            background: lightskyblue;
+            opacity: 1;
+            filter: alpha(opacity=100);
+        }
+    </style>
+</head>
+<body>
+<div id="box"></div>
+
+<script type="text/javascript" src="domTool.js"></script>
+<script type="text/javascript" src="animTool.js"></script>
+<script type="text/javascript">
+    var box = document.getElementById("box");
+    anim(box, {
+        top: 500,
+        left: 1000,
+        opacity: 0
+    }, 1000);
+</script>
+</body>
+</html>
