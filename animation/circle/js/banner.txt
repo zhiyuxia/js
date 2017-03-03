@@ -1,0 +1,9 @@
+[{"img":"banner1.jpg",
+"desc":"js learning"},
+{"img":"banner2.jpg",
+"desc":"js learing2"},
+{"img":"banner3.jpg",
+"desc":"js learing3"},
+{"img":"banner2.jpg",
+"desc":"js learing2"}
+]
